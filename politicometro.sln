@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "politicometro", "politicometro\politicometro.jsproj", "{F808A1AD-0D55-4873-9EAF-4AAEB5551D32}"
+Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "encontreSeuPolitico", "politicometro\encontreSeuPolitico.jsproj", "{F808A1AD-0D55-4873-9EAF-4AAEB5551D32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

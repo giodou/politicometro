@@ -1,0 +1,101 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>App para avaliação de candidatos</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!----font-Awesome----->
+    <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
+    <!----font-Awesome----->
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- start plugins -->
+    
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="js/app/candidatesApi.js"></script>
+    <script type="text/javascript" src="js/app/candidates.js"></script>
+</head>
+<body>
+    <div class="main_bg" style="height: 600px; max-height: 100%;">
+        <div class="container">
+            <div class="main">
+
+                <div class="col-md-6 span1_of_1">
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Cargo</label>
+                        </div>
+                        <select class="custom-select" id="candidateType">
+                            <option value="1">Deputado estadual</option>
+                            <option value="2">Deputado federal</option>
+                            <option value="3">Senador</option>
+                            <option value="4">Governador</option>
+                        </select>
+                    </div>
+
+                    <div class="grid1_of_1">
+                        <input type="hidden" id="candidateId" value="" />
+                        <img id="candidateImg" src="http://manager.politicos.org.br/files/viewer?file=be55dae5-2f0d-4cf8-bde9-080809a9b434.jpg&directory=parliamentarian" alt="" class="img-responsive" />
+                        <h2 id="candidateName">Anne Hathaway</h2>
+                        <h4 id="candidateParty">PP</h4>
+                    </div>
+
+                    <div class="icon_list list-unstyled" style="width: 100%; margin-top: 5px;">
+                        <button style="width: 48%" class="btn btn-primary btn-lg pull-left" onclick="Like()"><i class="fa fa-thumbs-up"></i></button>
+                        <button style="width: 48%" class="btn btn-danger btn-lg pull-right" onclick="UnLike()"><i class="fa fa-thumbs-down"></i></button>
+
+                        <button style="width: 100%; margin-top: 15px;" class="btn btn-info btn-lg pull-right" onclick="ViewDetailsCandidate()"><i class="fa fa-eye"></i> Mais infos</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--DAQUI PARA BAIXO, APENAS OS MODAIS DE INFOS SOBRE O CANDIDATO, E MENSAGEM SOBRE NAO HAVER MAIS CANDIDATOS-->
+            <div class="modal fade" id="modalDetailCandidate" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalCandidateName"></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="modalNoMoreCandidates" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <h4>Não há mais candidatos</h4>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+</html>
